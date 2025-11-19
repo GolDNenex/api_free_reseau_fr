@@ -21,7 +21,7 @@ derive_more = { version = "2.0.1", features = [
 ] }
 reqwest = "0.12.24"
 
-serde = { version = "*", default-features = false, features = [
+serde = { version = "1.0", default-features = false, features = [
     "derive",
 ], optional = true }
 
