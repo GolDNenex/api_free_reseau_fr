@@ -1,0 +1,33 @@
+[package]
+name = "api_free_reseau_fr"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.1"
+repository = "https://github.com/goldnenex/api_free_reseau_fr"
+description = "Rust client for interacting with free-reseau.fr API"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+categories = ["web-programming::http-client"]
+
+[dependencies]
+derive_more = { version = "2.0.1", features = [
+    "error",
+    "from",
+    "display",
+    "debug",
+    "deref",
+    "deref_mut",
+    "from_str",
+] }
+reqwest = "0.12.24"
+
+serde = { version = "*", default-features = false, features = [
+    "derive",
+], optional = true }
+
+[dev-dependencies]
+tokio = { version = "1.48", features = ["rt", "macros"] }
+
+
+[features]
+serde = ["dep:serde", "reqwest/json"]
